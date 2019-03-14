@@ -1,6 +1,6 @@
 function areatriangulo  
-  clear;
-  clc;
+  clear
+  clc
   %reales (b, h, A)
   disp ('ingrese el valor de la base');
   b=input('');
