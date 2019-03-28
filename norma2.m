@@ -11,12 +11,13 @@ function norma2
   suma=0;
   i=1;
   max=abs(A(1))
-  while i<=n
+  while i<n
     if max< abs (A(i))
     max=A(i);
     i=i+1;
     end
   end
+  disp(max)
   norma= max
   c=A/n
 endfunction
