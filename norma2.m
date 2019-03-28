@@ -14,10 +14,10 @@ function norma2
   while i<n
     if max< abs (A(i))
     max=A(i);
+    endif
     i=i+1;
-    end
   end
-  disp(max)
+  disp('la norma es '),(max);
   norma= max
   c=A/n
-endfunction
+end
