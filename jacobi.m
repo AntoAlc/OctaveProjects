@@ -9,7 +9,7 @@ function jacobi
         5 
         6]
   it=0;
-  itmax=100;
+  itmax=99;
   tol=1e-5;
   n=3;
   for i=1:n
