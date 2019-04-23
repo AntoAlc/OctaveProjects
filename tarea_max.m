@@ -1,4 +1,4 @@
-function max
+function tarea_max
   clear
   clc
   datosTotales=5
