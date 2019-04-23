@@ -5,9 +5,11 @@ function operaciones_matrices
   B=[1 0; 0 1]
   C=A+B;
   disp ('C=A+B'); disp(C);
+  disp ('C=A+B'); C
+  
   disp ('D=A-B');disp (A-B);
   disp ('E=A*B'); disp (A*B);
-  disp ('F= A.*B'); disp(A.*B);
+  disp ('F= A.*B'); disp(A.*B); %multiplica componente a componente ./ divide componente a componente
   
   A=[5 0;0 5]
   disp('inversa de A='); disp(inv (A));
