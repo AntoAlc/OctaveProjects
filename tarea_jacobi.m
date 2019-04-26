@@ -19,10 +19,12 @@ function tarea_jacobi
    for j=1:n
      if sum(abs (A(i,j)))> A(i,i) 
       AD= flipud (A); %convierte la matriz en diagonal dominante intercambiando filas
+      b= flipud(b); %sube la fila de b respecto a A para no cambiar el resultado original
      end
    end
   end
   AD
+  b
   for i=1:n
     D(i,i)=AD(i,i);
   end
