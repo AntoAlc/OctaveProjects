@@ -36,19 +36,20 @@ function tarea_edo
     c(i,i+1)=1;
   end
   
+  disp('la matriz de coeficientes de edo es '); disp(c);
+  
   for i=1:n
     identidad(i,i)=1;
   end
-    
-  disp('la matriz de coeficientes de edo es '); disp(c);
   identidad
+  
   A=((-1/h^2)*c+identidad)
   s=inv(A)*p %vector solucion (puntos interiores)
   
   for i=2:N-1 %%agrega al vector u los vectores de s, seria desde la componente 2, hasta la n-1, la 1 y la n las tengo como dato
     u(i)=s(i-1);
   end
-  
+  u=u';
   disp('el vector u es igual a:'); disp(u); %muestra el vector solucion con los N puntos
   
   hold on
@@ -83,26 +84,26 @@ function tarea_edo
     
     disp('la matriz de coeficientes de derivadas es ');disp(coef); 
 
-    du=u*coef %vector de derivda
+    du=coef*u %vector de derivada
     
     hold all
     plot(x,du, '**r')  %grafico la derivada de rojo
     
     
     
-    %%INTEGRACIÓN con trapecios compuesto
+    %%INTEGRACIÓN con trapecios compuesto de la derivada du
     
     coefint=zeros(N,1);
     coefint(1)=h*1/2;
     coefint(N)=h*1/2;
     
     for i=2:N-1
-      coefint(i)=h*1;
+      coefint(i)=h;
     end
     
-    int=0; % inicializo la variable acumulador
+    int=0; 
     for i=1:N
-      int=int+coefint(i)*u(i);
+      int=int+coefint(i)*du(i);
     end
 
     disp('El vector de coeficientes de la integral es '),disp(coefint)
